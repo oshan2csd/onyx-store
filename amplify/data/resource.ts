@@ -11,8 +11,8 @@ const schema = a.schema({
     .model({
       name: a.string().required(),
       description: a.string().required(),
-      price: a.integer().required(), // In cents to avoid precision, rounding issues
-      images: a.hasMany("ProductImage", "productId"),
+      price: a.integer().required(),
+      images: a.string().required(), 
     })
     .authorization((allow) => [
       allow.guest().to(["read"]),
